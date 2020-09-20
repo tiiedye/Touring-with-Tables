@@ -52,8 +52,15 @@ int main() {
     }
     };
 
-    // Unformatted display so you can see how to access the vector elements
-    std::cout << tours.title << std::endl;
+    // finds the length of the title
+    int title_length = tours.title.length();
+    // sets the total width of the table
+    const int total_width{ 70 };
+
+    // displays the title and a line to seperate the title of the table and the content of the table
+    std::cout << std::setw((total_width - title_length) / 2) << "" << tours.title << std::endl;
+    std::cout << std::setw(total_width) << std::setfill('-') << "" << std::endl;
+
     for (auto country : tours.countries) {   // loop through the countries
         std::cout << country.name << std::endl;
         for (auto city : country.cities) {       // loop through the cities for each country
