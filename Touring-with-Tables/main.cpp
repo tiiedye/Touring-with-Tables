@@ -56,10 +56,10 @@ int main() {
     int title_length = tours.title.length();
     // sets the total width of the table, and elements on the table
     const int total_width{ 70 };
-    const int country_width{ 20 };
-    const int city_width{ 20 };
-    const int population_width{ 15 };
-    const int cost_width{ 15 };
+    const int country_width{ 15 };
+    const int city_width{ 15 };
+    const int population_width{ 10 };
+    const int cost_width{ 10 };
 
 
     // displays the title and a line to seperate the title of the table and the content of the table
@@ -69,8 +69,11 @@ int main() {
 
     // displays the titles of the columns in the table
     std::cout << std::setw(country_width) << std::left << "Country"
+        << std::setw(5) << "|"
         << std::setw(city_width) << std::left << "City"
+        << std::setw(5) << "|"
         << std::setw(population_width) << std::right << "Population"
+        << std::setw(5) << "|"
         << std::setw(cost_width) << std::right << "Cost" << std::endl;
 
     // displays a line between the column titles and the table content
@@ -82,8 +85,11 @@ int main() {
         for (size_t i = 0; i < country.cities.size(); ++i) {
                             // conditional operator to display the country name or a blank space if the next city is in the same country
             std::cout << std::setw(country_width) << std::left << ((i == 0) ? country.name : "")
+                << std::setw(5) << "|"
                 << std::setw(city_width) << std::left << country.cities.at(i).name
+                << std::setw(5) << "|"
                 << std::setw(population_width) << std::right << country.cities.at(i).population
+                << std::setw(5) << "|"
                 << std::setw(cost_width) << std::right << country.cities.at(i).cost << std::endl;
         }
     }
