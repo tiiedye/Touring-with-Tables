@@ -54,12 +54,27 @@ int main() {
 
     // finds the length of the title
     int title_length = tours.title.length();
-    // sets the total width of the table
+    // sets the total width of the table, and elements on the table
     const int total_width{ 70 };
+    const int country_width{ 20 };
+    const int city_width{ 20 };
+    const int population_width{ 15 };
+    const int cost_width{ 15 };
+
 
     // displays the title and a line to seperate the title of the table and the content of the table
     std::cout << std::setw((total_width - title_length) / 2) << "" << tours.title << std::endl;
+    std::cout << std::setw(total_width) << std::setfill('=') << "" << std::endl;
+    std::cout << std::setfill(' ') << std::endl; // resets setfil to a blank space.
+
+    // displays the titles of the columns in the table
+    std::cout << std::setw(country_width) << std::left << "Country"
+        << std::setw(city_width) << std::left << "City"
+        << std::setw(population_width) << std::left << "Population"
+        << std::setw(cost_width) << std::right << "Cost" << std::endl;
+
     std::cout << std::setw(total_width) << std::setfill('-') << "" << std::endl;
+    std::cout << std::setfill(' ');
 
     for (auto country : tours.countries) {   // loop through the countries
         std::cout << country.name << std::endl;
