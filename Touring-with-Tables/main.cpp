@@ -70,19 +70,21 @@ int main() {
     // displays the titles of the columns in the table
     std::cout << std::setw(country_width) << std::left << "Country"
         << std::setw(city_width) << std::left << "City"
-        << std::setw(population_width) << std::left << "Population"
+        << std::setw(population_width) << std::right << "Population"
         << std::setw(cost_width) << std::right << "Cost" << std::endl;
 
+    // displays a line between the column titles and the table content
     std::cout << std::setw(total_width) << std::setfill('-') << "" << std::endl;
     std::cout << std::setfill(' ');
+    std::cout << std::setprecision(2) << std::fixed;
 
     for (auto country : tours.countries) {   // loop through the countries
-        std::cout << country.name << std::endl;
-        for (auto city : country.cities) {       // loop through the cities for each country
-            std::cout << "\t" << city.name
-                << "\t" << city.population
-                << "\t" << city.cost
-                << std::endl;
+        for (size_t i = 0; i < country.cities.size(); ++i) {
+                            // conditional operator to display the country name or a blank space if the next city is in the same country
+            std::cout << std::setw(country_width) << std::left << ((i == 0) ? country.name : "")
+                << std::setw(city_width) << std::left << country.cities.at(i).name
+                << std::setw(population_width) << std::right << country.cities.at(i).population
+                << std::setw(cost_width) << std::right << country.cities.at(i).cost << std::endl;
         }
     }
 
