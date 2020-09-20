@@ -2,7 +2,7 @@
 
 # Touring with Tables
 A simple app that displays a table with counties, cities, city population, and average travel cost to that city from Miami. 
-Practicing working with making custom tables using C++ and CLI to display the table.
+Practicing working with making custom tables using C++ and CLI to display the table. Makes use of the Standard Library setw, setfill, setprecision, left, and right methods.
 
 <img src="./assets/screenshot.png"
      alt="Img"
