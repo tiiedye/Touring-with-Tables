@@ -1,7 +1,8 @@
 ![made-with-VisualStudio](https://img.shields.io/badge/Made%20With-Visual%20Studio-ba88f3)  ![Using-CPlusPlus](https://img.shields.io/badge/Using-C%2B%2B-ff69b4)
 
 # Touring with Tables
-...
+A simple app that displays a table with counties, cities, city population, and average travel cost to that city from Miami. 
+Practicing working with making custom tables using C++ and CLI to display the table.
 
 <img src="./assets/screenshot.png"
      alt="Img"
